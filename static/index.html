@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Cloud Platform | Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <h1>IoT Cloud Platform</h1>
+            </div>
+            <div class="status-indicator">
+                <span class="pulse"></span>
+                <span>System Live</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="widgets-container">
+                <div class="widget glass-card widget-temp">
+                    <h3>Latest Temperature</h3>
+                    <div class="widget-value">
+                        <span id="current-temp">--</span>°C
+                    </div>
+                </div>
+                <div class="widget glass-card widget-hum">
+                    <h3>Latest Humidity</h3>
+                    <div class="widget-value">
+                        <span id="current-hum">--</span>%
+                    </div>
+                </div>
+                <div class="widget glass-card widget-devices">
+                    <h3>Active Devices</h3>
+                    <div class="widget-value" id="active-devices">--</div>
+                </div>
+            </div>
+
+            <div class="chart-container glass-card">
+                <div class="chart-header">
+                    <h2>Telemetry Time-series</h2>
+                    <span class="refresh-text" id="last-updated">Updating...</span>
+                </div>
+                <div class="canvas-wrapper">
+                    <canvas id="telemetryChart"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/app.js"></script>
+</body>
+</html>
